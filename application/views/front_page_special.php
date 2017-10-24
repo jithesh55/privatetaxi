@@ -31,10 +31,10 @@ if($this->session->has_userdata('user_id'))
 <div class="row">
 <div class="col-xs-11 col-md-10 col-md-offset-3">
 
- <h2 class="text-muted">TRAINING AND PLACEMENT CELL <small>MACE</small></h2>
+ <h2 class="text-muted">PRIVATE TAXI RENTAL SYSTEM <small>GIVE A RIDE</small></h2>
  <p class="text-muted">
- This is the web portal for Training and Placement Cell ,Mar Athanasius College of Engineering, Kothamangalam .<br/>
- This space will be filled with statistics and other informations after the portal is put to the full fledged working.<br/><br/>
+PRIVATE TAXI RENTAL SYSTEM<br/>
+ GIVE A RIDE ON YOUR WAY AND EARN MONEY<br/><br/>
 
 
  </p>

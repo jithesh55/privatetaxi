@@ -54,9 +54,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    <span class="caret"></span>
 		  </a>
 		  <ul class="dropdown-menu">
-		    <li><a href="<?php echo base_url();?>signup/candidate">Candidates</a></li>
+		    <li><a href="<?php echo base_url();?>signup/candidate">Passenger</a></li>
 		    <li class="divider"></li>
-		    <li><a href="<?php echo base_url();?>signup/volunteer">Volunteers</a></li>
+		    <li><a href="<?php echo base_url();?>signup/volunteer">Driver</a></li>
 		  </ul>
 		</div>
 		<?php
