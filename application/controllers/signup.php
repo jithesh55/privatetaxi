@@ -54,36 +54,32 @@ class Signup extends CI_Controller {
 		$this->load->view('foot',$data);
 	}
 
-	public function success($user_id)
+	public function success($data)
 	{
 		$data['title']="Signup |PRIVATE TAXI PASSENGER";
-		/*$val = $this->db->simple_query('SELECT name,type,admission_no,class,email,email_verified,verified FROM user_table WHERE id="'.$user_id.'" LIMIT 1');
+		/*$val = $this->db->simple_query('SELECT name_p,mail_p FROM passenger WHERE mail_p="'.$email.'" LIMIT 1');
 		if(mysqli_num_rows($val)<1)
 			{
 				$data['title']="User doesn't exist";
 				$this->load->view('head',$data);
 				$data['no_user']=1;
-				$this->load->view('error_view',$data);
+				//$this->load->view('error_view',$data);
 				$this->load->view('foot',$data);
 				return;
 			}
 		$row=mysqli_fetch_array($val);
-		$data['type']=$row['type'];
-		$data['admission_no']=$row['admission_no'];
-		$data['email_verified']=$row['email_verified'];
-		$data['verified']=$row['verified'];
-		$data['name']=$row['name'];
-
-		//NOT NEEDED after 'mail okay'
-		$this->load->model('email_model');
-		$data['user_id']=$user_id;
-		$data['code']=$this->email_model->reget_code($user_id,$row['email'],0);
-
-		$data['class']=$row['class'];
-
-		$this->load->model('log_out_model'); */
-		$this->load->view('head',$data);
-		$this->load->view('success_signup_view',$data);
+		//$data['type']=$row['type'];
+		//$data['admission_no']=$row['admission_no'];
+		$data['email']=$row['mail_p'];
+		
+		$data['name']=$row['name_p'];
+        
+		
+		//$this->load->model('log_out_model'); 
+    
+*/	    $name=$data[name];
+        $this->load->view('head',$data);
+		$this->load->view('success_signup_view',$name);
 		$this->load->view('foot',$data);
 	}
 }
