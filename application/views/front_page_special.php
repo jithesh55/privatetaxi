@@ -1,29 +1,4 @@
-<div class="container" style="text-align:center;">
-<?php
-if($this->session->has_userdata('user_id'))
-	{
-		$user_id = $this->session->user_id;
-		$type = $this->session->type;
 
-		switch ($type) {
-			case 'admin':
-				echo '<a href="'.base_url().'admin" class="btn btn-primary">Goto admin console</a>';
-				break;
-			case 'volunteer':
-				echo '<a href="'.base_url().'volunteer" class="btn btn-primary">Goto your volunteer console</a>';
-				break;
-			case 'candidate':
-				echo '<a href="'.base_url().'candidate" class="btn btn-primary">Goto your console</a>';
-			
-			default:
-				echo '';
-				break;
-		}
-	}
-
-
-?>
-</div>
 
 
 
