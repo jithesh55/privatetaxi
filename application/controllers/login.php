@@ -1,63 +1,71 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Signup extends CI_Controller {
+class login extends CI_Controller {
 
-
-	public function index()
-	{
-		$data['title']="login |PRIVATE TAXI PASSENGER";
-	//	$this->load->model('log_out_model'); 
-
-		$this->load->view('head',$data);
-		$this->load->view('signup_select_view',$data);
-		$this->load->view('foot',$data);
-	}
-public function driver()
-{
-    
-   	$this->load->helper('form');
-		
-		$data['title']="login |PRIVATE TAXI PASSENGER";
-		$data['result']=array("NULL","");
-		if(isset($_POST['submit']))
-		{
-			$this->load->model('signup_model');
-			$data['result']=$this->signup_model->driver();
-		}
-		$this->load->view('head',$data);
-		$this->load->view('login_view_driver',$data);
-		$this->load->view('foot',$data); 
-    
-}
 	public function passenger()
 	{
-		$this->load->helper('form');
-		
-		$data['title']="login |PRIVATE TAXI PASSENGER";
-		$data['result']=array("NULL","");
+?> <h1>PASSENGER LOGIN</h1><?php
+    
+		$data['title']="Login | PASSENGER";
+		//$this->load->model('check_for_cookie'); 
+
+		//$this->load->model('login_model');  to test
 		if(isset($_POST['submit']))
 		{
-			$this->load->model('signup_model');
-			$data['result']=$this->signup_model->passenger();
+			$data['code']=$this->login_model->try_login();
 		}
+		else
+			$data['code']=99;
+		/*
+		code 99 : Not tried login yet
+		code 10 : user doesn't exist
+		code 90 : failed to login for more than 5 times
+		code 20 : password error
+		code 30 : Any/both of UN or PW is empty
+		code 45 : User not yet verified
+		code 54 : User email not verified
+		code 98 : User OK and all set
+		*/
+		if($data['code']==98)
+			header('Location:'.base_url());
+		
 		$this->load->view('head',$data);
-		$this->load->view('login_view_passenger',$data);
+		//if($this->session->has_userdata('id'))
+		
+		$this->load->view('login_view',$data);
 		$this->load->view('foot',$data);
 	}
+    public function driver()
+    {
+        ?> <h1>DRIVER LOGIN</h1><?php
+        		$data['title']="Login | DRIVER";
+		//$this->load->model('check_for_cookie'); 
 
-	public function success($data)
-	{
-	    
-        $this->load->view('head',$data);
-		$this->load->view('success_signup_view',$data);
+		//$this->load->model('login_model'); to test
+		if(isset($_POST['submit']))
+		{
+			$data['code']=$this->login_model->try_login1();
+		}
+		else
+			$data['code']=99;
+		/*
+		code 99 : Not tried login yet
+		code 10 : user doesn't exist
+		code 90 : failed to login for more than 5 times
+		code 20 : password error
+		code 30 : Any/both of UN or PW is empty
+		code 45 : User not yet verified
+		code 54 : User email not verified
+		code 98 : User OK and all set
+		*/
+		if($data['code']==98)
+			header('Location:'.base_url());
+		
+		$this->load->view('head',$data);
+		//if($this->session->has_userdata('id'))
+		
+		$this->load->view('login_view',$data);
 		$this->load->view('foot',$data);
-	}
-    public function success1($data)
-	{
-	    
-        $this->load->view('head',$data);
-		$this->load->view('success_signup_view1',$data);
-		$this->load->view('foot',$data);
-	}
+    }
 }

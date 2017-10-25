@@ -34,36 +34,28 @@ if($code!=99)
 	}
 	echo "</div>";
 }
+    /*
 if ($this->session->has_userdata('user_id')) {
 	echo '<div class="alert alert-danger fade in">    <a href="#" class="close" data-dismiss="alert">&times;</a>You are already logged in as "'.$this->session->name.'", logging in again can sign you out.</div>';
-}
+}*/
 ?>
 
 <div class="form-academic">
+   
 	<form method="POST" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>">
 	<div class="form-group">
-		<label for="username">Admission Number </label>
+		<label for="username">EMAIL </label>
 		 <input type="text" name="username" required style="text-transform:uppercase" class="form-control">
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
 		<input type="password" name="password" required class="form-control">
 	</div>
-	<div class="form-group">
-	Remember me <input type="checkbox" name="remember" value="yes">
-	</div>
+	
 	<input type="submit" name="submit" value="Login" class="btn btn-primary">
 	</form>	
 	<hr>
-		<a  role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-		  Volunteer Login
-		</a>
-		<div class="collapse" id="collapseExample">
-		  <div class="well">
-		    Add <strong>V-</strong> before your admission number.<p><p>
-		    Example<br/>  Admission Number: <strong>V-B13CSXXX</strong>
-		  </div>
-		</div>
+		
 </div>
 
 
