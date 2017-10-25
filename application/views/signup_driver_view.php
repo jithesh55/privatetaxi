@@ -1,14 +1,9 @@
 <div class="container">
-    
 <div class="row">
 <div class="col-xs-11 col-md-9 col-md-offset-2">
-<h2 style="color:#7C7C7C;">PASSENGER SIGNUP <small></small></h2><br/>
+<h2 style="color:#7C7C7C;">DRIVER SIGNUP <small></small></h2><br/>
 
-    
-    
-    
 <div class="col-md-6">
-    
 <?php
 if($result[0]!="NULL")
 {
@@ -67,6 +62,14 @@ if($result[0]!="NULL")
 		<label for="email">Email id </label>
 		<input type="email" name="email" required class="form-control"  value="<?php echo set_value('email'); ?>">
 	</div>
+    <div class="form-group">
+    <label for="age">Age</label>
+        <input type="number" name="age" required class="form-control"  value="<?php echo set_value('age'); ?>">
+    </div>
+    <div class="form-group">
+    <label for="idproof">ID proof number</label>
+        <input type="number" name="idproof" required class="form-control"  value="<?php echo set_value('age'); ?>">
+    </div>
 	<div class="form-group">
 		<label for="mobno">Mobile number </label>
 		<div class="input-group">

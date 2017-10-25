@@ -34,15 +34,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid header">
 	<div class="row">
 	<div class="col-xs-11">
-	<a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.png" id="logo"  title="Home"></a>
+	<a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.jpg" id="logo"  title="Home"></a>
 	</div>
 	</div>
 	<?php
 	
 		echo '<div class="btn-group pull-right" style="margin-top:4px; margin-right:5px;"> ';
-		echo '<a href="'.base_url().'login" class="btn btn-default">Login</a>';
+		//echo '<a href="'.base_url().'login" class="btn btn-default">Login</a>';
 		?>
-		<div class="btn-group pull-left">
+		<div class="btn-group pull-right">
 		  <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
 		    Signup
 		    <span class="caret"></span>
@@ -52,7 +52,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    <li class="divider"></li>
 		    <li><a href="<?php echo base_url();?>signup/driver">Driver</a></li>
 		  </ul>
-		</div>
+    	</div>
+    <div class="btn-group pull-right">
+      <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+		    Login
+		    <span class="caret"></span>
+		  </a>
+            <ul class="dropdown-menu">
+		    <li><a href="<?php echo base_url();?>login/passenger">Passenger</a></li>
+		    <li class="divider"></li>
+		    <li><a href="<?php echo base_url();?>login/driver">Driver</a></li>
+		  </ul>
+    </div>
+    
 		<?php
 		echo '</div>';
 	
