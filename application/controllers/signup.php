@@ -13,7 +13,7 @@ class Signup extends CI_Controller {
 		$this->load->view('signup_select_view',$data);
 		$this->load->view('foot',$data);
 	}
-
+/*
 	public function candidate()
 	{
 		$this->load->helper('form');
@@ -34,7 +34,7 @@ class Signup extends CI_Controller {
 		$this->load->view('js_signup_candidate_view');
 		$this->load->view('foot',$data);
 	}
-
+*/
 	public function passenger()
 	{
 		$this->load->helper('form');
@@ -46,7 +46,7 @@ class Signup extends CI_Controller {
 		if(isset($_POST['submit']))
 		{
 			$this->load->model('signup_model');
-			$data['result']=$this->signup_model->volunteer();
+			$data['result']=$this->signup_model->passenger();
 		}
 		$this->load->view('head',$data);
 		$this->load->view('signup_passenger_view',$data);
@@ -56,7 +56,7 @@ class Signup extends CI_Controller {
 
 	public function success($data)
 	{
-		$data['title']="Signup |PRIVATE TAXI PASSENGER";
+		//$data['title']="Signup |PRIVATE TAXI PASSENGER";
 		/*$val = $this->db->simple_query('SELECT name_p,mail_p FROM passenger WHERE mail_p="'.$email.'" LIMIT 1');
 		if(mysqli_num_rows($val)<1)
 			{
@@ -77,9 +77,9 @@ class Signup extends CI_Controller {
 		
 		//$this->load->model('log_out_model'); 
     
-*/	    $name=$data[name];
+*/	    
         $this->load->view('head',$data);
-		$this->load->view('success_signup_view',$name);
+		$this->load->view('success_signup_view',$data);
 		$this->load->view('foot',$data);
 	}
 }
