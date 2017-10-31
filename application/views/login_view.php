@@ -4,48 +4,13 @@
 <script type="text/javascript">
 	$('#v_login_butt').popover(options);
 </script>
-<?php
-if($code!=99)
-{
-	echo '<div class="alert alert-danger fade in">    <a href="#" class="close" data-dismiss="alert">&times;</a>';
-	switch ($code) {
-		case 10:
-			echo '<strong>Error!</strong> The user doesn\'t exist. <a href="'.base_url().'signup/candidate">Signup as a candidate</a>';
-			break;
-		case 90:
-			echo "<strong>Error!</strong> Multiple failure to login, please reset your password";
-			break;
-		case 20:
-			echo "<strong>Error!</strong> Incorrect credentials";
-			break;
-		case 54:
-			echo "<strong>Error!</strong> Verify your email first. "; //Won't run, depreciated
-			break;
-		case 45:
-			echo "<strong>Error!</strong> Please wait while your account is being verified"; // Won't run, depreciated
-			break;
-		case 30:
-			echo "<strong>Error!</strong> Credentials cannot be empty";
-			break;
-		
-		default:
-			echo "Fatal error: Contact webmaster with login CODE: ".$code;
-			break;
-	}
-	echo "</div>";
-}
-    /*
-if ($this->session->has_userdata('user_id')) {
-	echo '<div class="alert alert-danger fade in">    <a href="#" class="close" data-dismiss="alert">&times;</a>You are already logged in as "'.$this->session->name.'", logging in again can sign you out.</div>';
-}*/
-?>
 
 <div class="form-academic">
    
 	<form method="POST" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>">
 	<div class="form-group">
 		<label for="username">EMAIL </label>
-		 <input type="text" name="username" required style="text-transform:uppercase" class="form-control">
+		 <input type="text" name="username"  class="form-control">
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
