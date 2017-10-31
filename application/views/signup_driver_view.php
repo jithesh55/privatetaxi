@@ -60,27 +60,42 @@ if($result[0]!="NULL")
 	</div>
 	<div class="form-group">
 		<label for="email">Email id </label>
-		<input type="email" name="email" required class="form-control"  value="<?php echo set_value('email'); ?>">
+		<input type="email" name="email" required class="form-control"  value="gmail">
 	</div>
     <div class="form-group">
     <label for="age">Age</label>
-        <input type="number" name="age" required class="form-control"  value="<?php echo set_value('age'); ?>">
+        <input type="number" name="age" required class="form-control"  value="age">
     </div>
     <div class="form-group">
-    <label for="idproof">ID proof number</label>
-        <input type="number" name="idproof" required class="form-control"  value="<?php echo set_value('age'); ?>">
+    <label for="aproof">AADHAR  number</label>
+        <input type="number" name="adproof" required class="form-control"  value="aadhar">
+        <label for="lproof">Liscence number</label>
+        <input type="number" name="lproof" required class="form-control"  >
+        <label for="type">VEHICLE type</label><br>
+       <select name="type">
+                <option value="car">CAR</option>
+                <option value="bike">Bikes</option>
+                
+                
+        </select>
+        <br>
+        <label for="vnumber">Vehicle number</label>
+        <input type="number" name="vnumber" required class="form-control" >
+        
+        <label for="rcbook">RC BOOK number</label>
+        <input type="number" name="rcbook" required class="form-control"  >
     </div>
 	<div class="form-group">
 		<label for="mobno">Mobile number </label>
 		<div class="input-group">
     	<span class="input-group-addon">+91</span>
-		<input type="text" name="mobno" required class="form-control" maxlength="10" value="<?php echo set_value('mobno'); ?>">
+		<input type="text" name="mobno" required class="form-control" maxlength="10" >
 		</div>
 	</div>
 	
 	
 	<div class="form-group">
-		<input type="submit" name="submit" id="submit" class="btn btn-primary" value="Signup as passenger">
+		<input type="submit" name="submit" id="submit" class="btn btn-primary" value="Signup as driver">
 	</div>
 </form>
 

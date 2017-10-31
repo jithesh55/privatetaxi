@@ -51,8 +51,7 @@ class Signup_model extends CI_Model {
 	public function driver()
     {
         
-        if (!isset($_POST['name']) || !isset($_POST['gender']) || !isset($_POST['password']) || !isset($_POST['r_password']) || !isset($_POST['email']) || !isset($_POST['mobno']) || !isset($_POST['age']) || !isset($_POST['aproof']) || !isset($_POST['lproof'])
-           || !isset($_POST['type']) || !isset($_POST['vnumber'])|| !isset($_POST['rcbook']))
+        if (!isset($_POST['name']) || !isset($_POST['gender']) || !isset($_POST['password']) || !isset($_POST['r_password']) || !isset($_POST['email']) || !isset($_POST['mobno']) || !isset($_POST['age']) || !isset($_POST['idproof']) )
 		{
 			$res=array("error","Fill in all credentials.");
 			return $res;
@@ -66,11 +65,9 @@ class Signup_model extends CI_Model {
         $email=trim($_POST['email']);
         $mobno=trim($_POST['mobno']);
         $age=trim($_POST['age']);
-        $adproof=trim($_POST['adproof']);
-		$lproof=trim($_POST['lproof']);
-        $type=$_POST['type'];
-        $vnumber=trim($_POST['vnumber']);
-        $rcbook= trim($_POST['rcbook']);
+        $idproof=trim($_POST['idproof']);
+		$type='driver';	
+    
 		if(strlen($password)<5)
 			{
 				$res=array("error","Password should have atleast 5 characters");
@@ -85,11 +82,7 @@ class Signup_model extends CI_Model {
 		   'mail_d' => $email,
 		   'phone_d' => $mobno,
             'age' => $age,
-            'adproof' =>$adproof,
-             'lproof' =>$lproof,
-            'type' => $type,
-            'vnumber'=> $vnumber,
-            'rcbook'=> $rcbook
+            'idproof' =>$idproof
 			);
 			if($this->db->insert('driver', $data,$type))
 			{
