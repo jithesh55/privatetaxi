@@ -26,7 +26,7 @@ class login_model extends CI_Model {
         $res=$username;
         //var_dump($_SESSION)
        // return $res;
-        header('Location:'.base_url().'login/successp/');
+        header('Location:'.base_url().'index_controller/successp/');
 
      }
      }
@@ -50,7 +50,7 @@ class login_model extends CI_Model {
         $res=$username;
         //var_dump($_SESSION)
        // return $res;
-        header('Location:'.base_url().'login/successd/');
+        header('Location:'.base_url().'index_controller/successd/');
 
      }
      }  

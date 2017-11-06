@@ -5,7 +5,7 @@ class login extends CI_Controller {
 
 	public function passenger()
 	{
-?> <h1>PASSENGER LOGIN</h1><?php
+
     $this->load->model("login_model");
 		$data['title']="Login | PASSENGER";
 		if(isset($_POST['submit']))
@@ -15,22 +15,22 @@ class login extends CI_Controller {
 		else
 			$data['code']=99;
 		   $this->load->view('head',$data);
-	      $this->load->view('login_view',$data);
+	       $this->load->view('front_page_special',$data);
 		$this->load->view('foot',$data);
 	}
     public function driver()
     {
-        ?> <h1>DRIVER LOGIN</h1><?php
+    
          $this->load->model("login_model");
 		$data['title']="Login | DRIVER";
-		if(isset($_POST['submit']))
+		if(isset($_POST['driver']))
 		{
           $res=$this->login_model->try_logind();
 		}
 		else
 			$data['code']=99;
 		   $this->load->view('head',$data);
-	      $this->load->view('login_view',$data);
+	      $this->load->view('front_page_special',$data);
 		$this->load->view('foot',$data);
     }
     public function successp()

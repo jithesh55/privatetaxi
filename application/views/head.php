@@ -30,11 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				  </script>
 				
 
-<body>
+<body  style="background-color: rgba(0, 0, 255, 0.1);width:99%;">
 <div class="container-fluid header">
 	<div class="row">
 	<div class="col-xs-11">
-	<a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.jpg" id="logo"  title="Home"></a>
+	<a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.png" id="logo" title="Home"></a>
 	</div>
 	</div>
 	<?php
@@ -53,17 +53,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    <li><a href="<?php echo base_url();?>signup/driver">Driver</a></li>
 		  </ul>
     	</div>
-    <div class="btn-group pull-right">
-      <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
-		    Login
-		    <span class="caret"></span>
-		  </a>
-            <ul class="dropdown-menu">
-		    <li><a href="<?php echo base_url();?>login/passenger">Passenger</a></li>
-		    <li class="divider"></li>
-		    <li><a href="<?php echo base_url();?>login/driver">Driver</a></li>
-		  </ul>
-    </div>
     
 		<?php
 		echo '</div>';
